@@ -14,10 +14,10 @@ header {
     padding: 10px;
     background-color: #f5db13;
     box-shadow: 0px 3px 21px -5px rgba(0,0,0,0.75);
+    z-index: 1;
 }
 
 header > img {
-
     width: 64px;
 }
 
@@ -55,8 +55,6 @@ header > button {
     text-decoration: none;
     color: black;
     font-weight: bold;
-
-    
 }
 
 body{
@@ -65,27 +63,29 @@ body{
     height: 100vh;
 }
 
-main{
+main {
+    background: linear-gradient(#F5DB13, #F2B807);
+}
+
+main, main > div{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background: linear-gradient(#F5DB13, #F2B807);
-/*     height: 100%; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex: 1;
 }
 
-main > h1 {
+main > div > h1 {
     font-size: 42px;
     font-weight: normal;
-    padding: 20px 40px;
+    padding: 15px 40px;
 }
 
-main > p {
+main > div > p {
     font-size: 24px;
     font-weight: normal;
-    padding: 0px 40px;
+    padding: 0 40px;
 }
 
 @media(min-width:481px) {
@@ -96,7 +96,7 @@ main > p {
     header > img {
         width: 128px;
     }
-
+}
     
 
 @media (min-width: 650px) {
@@ -108,4 +108,25 @@ main > p {
         display: none;
     }
 }
+
+@media(min-width: 769px) {
+    main {
+        flex-direction: row-reverse;
+    }        
+
+    main > img, main > div {
+        flex-grow: 1;
+    }
+
+    .pikachu {
+        max-width: 55%;    
+    }
+
+    main > div {   
+        justify-content: space-between;             
+    }
+
+    main > div > p {
+        margin: 64px 0;
+    }
 }
